@@ -12,3 +12,11 @@ path = "src/d01p1.rs"
 [[bin]]
 name = "d01p2"
 path = "src/d01p2.rs"
+
+[[bin]]
+name = "d02p1"
+path = "src/d02p1.rs"
+
+[[bin]]
+name = "d02p2"
+path = "src/d02p2.rs"
