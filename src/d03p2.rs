@@ -13,20 +13,14 @@ fn main() {
 
 fn run(input: Vec<Vec<bool>>) -> usize {
     let slopes = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)];
+    let len = input.first().unwrap().len();
     let mut total = 1;
 
     for (right, down) in slopes.iter().copied() {
-        let mut col = right;
-        let mut trees = 0;
+        let rows = input.iter().step_by(down).skip(1);
+        let cols = (0..len).cycle().step_by(right).skip(1);
 
-        for row in input.iter().step_by(down).skip(1) {
-            if row[col] {
-                trees += 1;
-            }
-            col = (col + right) % row.len();
-        }
-
-        total *= trees;
+        total *= rows.zip(cols).filter(|(row, col)| row[*col]).count();
     }
 
     total

@@ -12,15 +12,10 @@ fn main() {
 }
 
 fn run(input: Vec<Vec<bool>>) -> usize {
-    let mut col = 3;
-    let mut trees = 0;
+    let len = input.first().unwrap().len();
 
-    for row in input.iter().skip(1) {
-        if row[col] {
-            trees += 1;
-        }
-        col = (col + 3) % row.len();
-    }
+    let rows = input.iter().skip(1);
+    let cols = (0..len).cycle().step_by(3).skip(1);
 
-    trees
+    rows.zip(cols).filter(|(row, col)| row[*col]).count()
 }
