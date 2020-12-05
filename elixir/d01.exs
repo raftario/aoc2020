@@ -19,6 +19,6 @@ defmodule D01 do
   end
 end
 
-input = File.read!("inputs/d01") |> D01.parse_input()
+input = File.read!(List.first(System.argv())) |> D01.parse_input()
 res = D01.run(input)
 IO.puts(res)

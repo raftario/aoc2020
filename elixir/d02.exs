@@ -41,6 +41,6 @@ defmodule D02 do
   end
 end
 
-input = File.read!("inputs/d02") |> D02.parse_input()
+input = File.read!(List.first(System.argv())) |> D02.parse_input()
 res = D02.run(input)
 IO.puts(res)
