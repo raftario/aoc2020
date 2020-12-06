@@ -44,3 +44,11 @@ path = "src/d05p1.rs"
 [[bin]]
 name = "d05p2"
 path = "src/d05p2.rs"
+
+[[bin]]
+name = "d06p1"
+path = "src/d06p1.rs"
+
+[[bin]]
+name = "d06p2"
+path = "src/d06p2.rs"
